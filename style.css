@@ -1,0 +1,64 @@
+body {
+  background-color: #968adf;
+  height: 100vh;
+}
+
+.gallery {
+  display: flex;
+  /* flex: 0 0 auto; */
+  /* position: relative; */
+  height: 100%;
+  /* width: 100%; */
+  /* contain: content; */
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 50%;
+  /* z-index: 1; */
+  /* transform-style: preserve-3d; */
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  /* contain: layout; */
+  display: flex;
+  align-items: center;
+}
+
+.left .inner {
+  perspective-origin: 100% 50%;
+}
+
+.right .inner {
+  perspective-origin: 0% 50%;
+}
+
+.item {
+  position: absolute;
+  /* backface-visibility: hidden; */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+  width: 12rem;
+  height: 14rem;
+  /* will-change: transform; */
+  /* transform-style: preserve-3d; */
+  /* aspect-ratio: 219/255; */
+  transition: transform 300ms cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+.left .item {
+  right: -10vmin;
+}
+
+.right .item {
+  left: -10vmin;
+}
