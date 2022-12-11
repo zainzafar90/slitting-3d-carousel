@@ -1,6 +1,6 @@
-import './style.css';
+import "./style.css";
 
-const baseUrl = 'https://kprverse.com/images/compressed/webp/collection';
+const baseUrl = "./img";
 
 const leftPerspectives = [
   { x: -10, z: -4 },
@@ -20,8 +20,8 @@ const rightPerspectives = [
   { x: -10, z: -4 },
 ];
 
-const leftCards = document.querySelectorAll('.left .item');
-const rightCards = document.querySelectorAll('.right .item');
+const leftCards = document.querySelectorAll(".left .item");
+const rightCards = document.querySelectorAll(".right .item");
 
 const translateImage = (target, p) => {
   target.style.transform = `translate3d(${p.x}vmin, 0, ${p.z}vmin)`;
@@ -40,11 +40,11 @@ const initCards = (c, side, index, perspectives) => {
 };
 
 leftCards.forEach((c, index) => {
-  initCards(c, 'left', index, leftPerspectives);
+  initCards(c, "left", index, leftPerspectives);
 });
 
 rightCards.forEach((c, index) => {
-  initCards(c, 'right', index, rightPerspectives);
+  initCards(c, "right", index, rightPerspectives);
 });
 
 const animateCards = (c, perspectives) => {
